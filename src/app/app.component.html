@@ -1,0 +1,11 @@
+<label>Enter English!</label>
+<input class="input" (input)="text = $event.target.value" />
+<select required (change)="selectedLanguage = $event.target.value">
+  <option selected value="" disabled>
+    -- Select Language to Translate into --
+  </option>
+  <option *ngFor="let o of options" [value]="o.language">{{ o.name }}</option>
+</select>
+<button class="button" (click)="submit()">Translate</button>
+
+<h1>{{translatedText}}</h1>
